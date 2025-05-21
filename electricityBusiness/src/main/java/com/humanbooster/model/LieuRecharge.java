@@ -44,6 +44,10 @@ public class LieuRecharge extends GenericEntity{
         return adresse;
     }
 
+    public List<BorneRecharge> getBornes() {
+        return bornes;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -54,6 +58,10 @@ public class LieuRecharge extends GenericEntity{
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    public void setBornes(List<BorneRecharge> bornes) {
+        this.bornes = bornes;
     }
 
     public void print() {

@@ -74,6 +74,14 @@ public class BorneRecharge extends GenericEntity {
         return instructions;
     }
 
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public LieuRecharge getLieuRecharge() {
+        return lieuRecharge;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -91,6 +99,14 @@ public class BorneRecharge extends GenericEntity {
     }
     public void setInstructions(String instructions) {
         this.instructions = instructions;
+    }
+
+    public void setLieuRecharge(LieuRecharge lieuRecharge) {
+        this.lieuRecharge = lieuRecharge;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 
     public void print() {

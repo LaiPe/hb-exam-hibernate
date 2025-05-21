@@ -6,10 +6,12 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 @Table(name = "reservation")
-public class Reservation {
+public class Reservation extends GenericEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -54,6 +56,14 @@ public class Reservation {
         return statut;
     }
 
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public BorneRecharge getBorneRecharge() {
+        return borneRecharge;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -68,5 +78,22 @@ public class Reservation {
 
     public void setStatut(String statut) {
         this.statut = statut;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    public void setBorneRecharge(BorneRecharge borneRecharge) {
+        this.borneRecharge = borneRecharge;
+    }
+
+    public void print() {
+        Map<String,String> attributes = new HashMap<>();
+        attributes.put("ID", getId().toString());
+        attributes.put("date_debut", getDateDebut().toString());
+        attributes.put("date_fin", getDateFin().toString());
+        attributes.put("statut", getStatut());
+        print(attributes);
     }
 }

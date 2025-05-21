@@ -70,6 +70,10 @@ public class Utilisateur extends GenericEntity {
         return role;
     }
 
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -96,6 +100,10 @@ public class Utilisateur extends GenericEntity {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 
     public void print() {
