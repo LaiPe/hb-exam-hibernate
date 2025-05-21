@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.3
+    container_name: mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eb_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build:
+      context: ./electricityBusiness/
+      dockerfile: Dockerfile
+    container_name: app
+    depends_on:
+      - mysql
+    restart: on-failure
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: eb_db
+      DB_USER: user
+      DB_PASSWORD: password
+
+volumes:
+  mysql_data:
+
+
+
+
