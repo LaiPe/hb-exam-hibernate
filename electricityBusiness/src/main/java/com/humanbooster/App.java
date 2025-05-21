@@ -12,10 +12,10 @@ import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
         // Initialize DAOs
-        UtilisateurDAO utilisateurDAO = new UtilisateurDAO(true);
-        LieuRechargeDAO lieuRechargeDAO = new LieuRechargeDAO(true);
-        BorneRechargeDAO borneRechargeDAO = new BorneRechargeDAO(true);
-        ReservationDAO reservationDAO = new ReservationDAO(true);
+        UtilisateurDAO utilisateurDAO = new UtilisateurDAO(false);
+        LieuRechargeDAO lieuRechargeDAO = new LieuRechargeDAO(false);
+        BorneRechargeDAO borneRechargeDAO = new BorneRechargeDAO(false);
+        ReservationDAO reservationDAO = new ReservationDAO(false);
 
         // Create multiple users
         Utilisateur admin = new Utilisateur();
